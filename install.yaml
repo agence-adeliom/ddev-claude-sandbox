@@ -1,0 +1,21 @@
+# Details about the install.yaml file are at https://ddev.readthedocs.io/en/stable/users/extend/additional-services/#sections-and-features-of-ddev-get-add-on-installyaml
+
+name: claude-sandbox
+
+# list of files and directories listed that are copied into project .ddev directory
+# Each file should contain #ddev-generated so it can be replaced by a later `ddev get`
+# if it hasn't been modified by the user.
+# DDEV environment variables can be interpolated into these filenames
+project_files:
+  - web-build/Dockerfile.claude-sandbox
+  - web-build/claude-sandbox.gitignore
+  - config.claude-sandbox.yaml
+  - commands/web/claude
+  - commands/web/agent-env
+  - claude/.gitignore
+  - claude/hooks/url-allowlist-check.sh
+  - claude/hooks/url-allowlist-add.sh
+  - claude/hooks/url-disallowlist-add.sh
+  - claude/hooks/env-protection.sh
+  - scripts/setup-claude.sh
+  - scripts/generate-claude-settings.php

@@ -1,0 +1,10 @@
+#ddev-generated
+
+# Install jq (needed for hooks)
+RUN apt-get update && apt-get install -y jq
+
+# Install Claude Code natively
+RUN curl -fsSL https://claude.ai/install.sh | bash -s latest \
+    && mkdir -p /opt/claude/bin \
+    && cp -L /root/.local/bin/claude /opt/claude/bin/claude \
+    && chmod +x /opt/claude/bin/claude

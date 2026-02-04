@@ -1,0 +1,16 @@
+#!/bin/bash
+#ddev-generated
+
+## Description: Claude Code AI Assistant
+## Usage: claude [args]
+## Example: ddev claude
+
+set -e
+export PATH="$HOME/.local/bin:$PATH"
+
+if [ ! -f ~/.local/bin/claude ]; then
+    echo "Error: Claude is not installed. Add 'claude' to AGENTS_INSTALL and restart DDEV."
+    exit 1
+fi
+
+claude --dangerously-skip-permissions "$@"

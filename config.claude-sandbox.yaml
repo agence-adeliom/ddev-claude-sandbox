@@ -1,0 +1,10 @@
+#ddev-generated
+hooks:
+  post-start:
+    - exec: "/var/www/html/.ddev/scripts/setup-claude.sh"
+
+web_environment:
+  # Security features - enabled by default
+  - CLAUDE_URL_ALLOWLIST_ENABLED=true
+  - CLAUDE_ENV_PROTECTION_ENABLED=true
+  - CLAUDE_PROTECTED_FILES=.env.local,.env.*.local

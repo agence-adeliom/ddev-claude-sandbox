@@ -1,0 +1,5 @@
+#ddev-generated
+
+# Claude internal configs
+/.claude.json
+/.claude/

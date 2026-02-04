@@ -1,0 +1,18 @@
+#!/bin/bash
+#ddev-generated
+
+## Description: Execute command with environment secrets loaded
+## Usage: agent-env [command]
+## Example: ddev agent-env php bin/console app:call-api
+
+set -e
+
+SECRETS_FILE="/var/www/html/.env.local"
+
+if [ -f "$SECRETS_FILE" ]; then
+    set -a
+    source "$SECRETS_FILE"
+    set +a
+fi
+
+exec "$@"
